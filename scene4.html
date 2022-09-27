@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        Un buen traje para la ocasión . . .
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/dress.gif" alt="">
+    </div>
+    <p class="instructions"><br><br>
+        Apuesto a que te quieres ver muy bien el día de hoy, por eso te preparamos un outfit perfecto, sal a conocer a nuestro pequeño amigo elegante, él te ayudará a prepararte. 
+    </p>
+    <div class="center"><br>
+        <span class='action' id="action">Listo</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-p.png" alt="" style="width: 350px; ">
+        <p class="poptext" style="font-size: 1em; margin-left: -22px;">
+            Nuestro amigo elegante se ha unido a la celebración, siempre viene bien un pequeño con traje acompañándonos.
+            <br>
+            Sus ancestros dicen que es un símbolo del amor y la amistad, pero él solo quiere festejar este gran día.        </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene5.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

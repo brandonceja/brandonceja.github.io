@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/love.gif" alt="">
+    </div>
+    <p class="instructions">
+    </p>
+    <div class="center">
+        <span class='action' id="action">Ya leí la tarjeta</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-t.png" alt="">
+        <p class="poptext">
+            ¡Felicidades!
+            <br>
+            Llegaste hasta el final.
+            <br>
+            No olvides ir a cenar algo delicioso el día de hoy.
+        </p>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/win.wav');
+            audio.play();
+        });
+
+    </script>
+</body>
+</html>

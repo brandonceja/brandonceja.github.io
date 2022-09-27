@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        El péndulo . . .
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/pendulo.gif" alt="">
+    </div><br>
+    <p class="instructions">
+        Hay un lugar en este hogar <br>
+        Donde gatos han de tragar <br>
+        Un péndulo cuelga en su interior <br>
+        Anunciando un festin con toda emoción
+    </p><br>
+    <div class="center">
+        <span class='action' id="action">Lo encontré</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-t.png" alt="">
+        <p class="poptext">
+            Un lindo dije para llevar, <br>
+            algunos dicen que permite adivinar.<br>
+            Con un regalo este ha de estar, <br>
+            de un ser que con amor decidió dar. <br>
+        </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene9.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

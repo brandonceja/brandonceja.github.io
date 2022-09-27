@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        La preparación . . .
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/bracelet.gif" alt="">
+    </div>
+    <p class="instructions">
+        Toda buen viaje inicia con un buen equipamiento.
+        <br>
+        Para continuar con este viaje tienes que ir al baño y tomar una ducha, 
+        asegúrate de disfrutar el agua y quedar muy limpia.
+        <br>
+        Al finalizar, recibirás el brazalete de la protección.
+            </p>
+    <div class="center">
+        <span class='action' id="action">Listo</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-r.png" alt="">
+        <p class="poptext">
+            Este brazalete te protegerá en este viaje y siempre que lo quieras utilizar con el poder de sus 7 piedras mágicas.
+            <br>
+            Además te queda muy bien ;) 
+                </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene4.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

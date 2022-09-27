@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        Wake up Samantha . . .
+        <br>
+        Today is a great day
+        <br>
+        Knock, knock . . .
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/rabbit.gif" alt="">
+    </div>
+    <p class="instructions">
+        Escuche que hoy es un día muy especial, ¿por qué no me encuentras en tu habitación para iniciar este gran día? :)
+    </p>
+    <div class="center">
+        <span class='action' id="action">Encontrado</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-r.png" alt="">
+        <p class="poptext">
+            Sabía que después de que terminaste Boby Carrot no me olvidarías, me salí de ahí para acompañarte en este viaje.
+        </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene2.html";
+            }, 700);
+        });
+    </script>
+</body>
+</html>

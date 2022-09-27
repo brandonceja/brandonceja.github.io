@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+       Un pequeño festín :)
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/cake.gif" alt="" style="width: auto;">
+    </div>
+    <p class="instructions"><br>
+        ¡Genial! Al fin estamos todos listos, disfruta de este pequeño festín con tus nuevos amigos. <br>
+        ¡Te deseamos todos un excelente cumpleaños! <br>
+        ¿Abrazos? :)
+    </p>
+    <div class="center"><br>
+        <span class='action' id="action">Ya comí pastel</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-t.png" alt="">
+        <p class="poptext" style="font-size: 0.9em;">
+            ¡Uff! Que buen pastel<br>
+            Nosotros nos despedimos aquí, pero aun te queda un excelente día por delante, te deseamos el mejor de los días al rededor de tus seres queridos<br>
+            pd: Escuchamos que alguien tiene una tarjeta para ti :D
+        </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene10.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

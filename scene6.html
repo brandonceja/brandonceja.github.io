@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        El tiempo . . .
+        <br>
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/time.gif" alt="">
+    </div>
+    <p class="instructions">
+        ¿A caso no es curioso cómo celebramos el paso de este señor?    
+        <br>
+        En fin ... ¿por qué no sales a ver que clima nos trajo el tiempo el día de hoy?
+        <br>
+        Tal vez encuentres algo interesante en el camino.
+    </p>
+    <div class="center">
+        <span class='action' id="action">Lo encontré</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-f.png" alt="">
+        <p class="poptext">
+           OMG! Mira ese estilo, te quedarón increíbles.
+        </p>
+        <div class="center">
+            <img src="./animations/sunglasses.gif" alt="" style="height: 150px;width: auto;position: absolute;top: 35%;left: 31%;">
+        </div>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene7.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

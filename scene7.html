@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        ¿Un cumpleaños sin regalos?
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/gift.gif" alt="">
+    </div>
+    <p class="instructions">
+        ¡Vamos! encuentra tu regalo en el auto, nuestro amigo de la suerte estará esperándote con él.
+    </p>
+    <div class="center">
+        <span class='action' id="action">Encontrado</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-t.png" alt="">
+        <p class="poptext">
+            ¡Yei! Al fin estamos todos juntos, 
+            <br>
+            ¡tenemos que celebrar!
+            <br>
+            Esperemos que te haya gustado tu regalo :) 
+        </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene8.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

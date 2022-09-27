@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        A drink?<br>
+        ¿Qué es  una celebración sin comida?
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/tea.gif" alt="" style="width: 400; height: 400px;">
+    </div>
+    <p class="instructions" style="margin-top: -150px;">
+        Exacto…
+        <br>
+        Nosotros nos encargamos de preparar el desayuno, pero te dejamos la parte más divertida, nuestro amigo misterioso te ayudará a preparar el té.    </p>
+    <div class="center">
+        <span class='action' id="action">Listo</span>
+    </div>
+    <div class="popup">
+        <img src="./img/popup-f.png" alt="">
+        <p class="poptext">
+            Buffus, Puffus, Fungus Misteriosus!
+            <br>
+            A nuestro amigo le encantan los acertijos, resuelve este por un premio.        </p>
+        <div class="center">
+            <span class='continue' id="continue">Continuar</span>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            document.getElementsByClassName("popup")[0].style.display = "block";
+            document.getElementsByClassName("overlay")[0].style.display = "block";
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+        });
+
+        document.getElementById("continue").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene6.html";
+            }, 700)
+        });
+    </script>
+</body>
+</html>

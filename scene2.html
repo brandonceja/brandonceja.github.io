@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Super Cool Day</title>
+</head>
+<body>
+    <h2 class="scene_header">
+        ¿Estás lista?
+    </h2>
+    <div class="center">
+        <img class="animation" src="./animations/rainbow.gif" alt="" style= "height:200px;">
+    </div><br><br>
+    <p class="instructions">
+        Hoy es un día muy especial y por eso decidimos festejarlo a lo grande.
+        Tendrás una serie de retos y acertijos por resolver los que te guiarán a una sorpresa.
+        Tomate tu tiempo para disfrutar el recorrido y mucho éxito.
+    </p>
+    <div class="center"><br><br><br><br>
+        <span class='action' id="action">Continuar</span>
+    </div>
+    <div class="overlay"></div>
+    <script>
+        document.getElementById("action").addEventListener("click", function(){
+            var audio = new Audio('./sounds/click.wav');
+            audio.play();
+            setTimeout(() => {
+                window.location = "scene3.html";
+            }, 700)        
+        });
+    </script>
+</body>
+</html>
